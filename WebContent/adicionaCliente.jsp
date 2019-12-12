@@ -24,7 +24,10 @@ body {
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.html">Foi Brinks</a>
+		<a class="navbar-brand" href="index.html"> <img
+			src="icon-inicio.png" width="30" height="30"
+			class="d-inline-block align-top" alt=""> FoiBrinks
+		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,27 +41,131 @@ body {
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> Produtos </a>
+					aria-expanded="false"><img alt="" src="produtos.svg">
+						Produtos </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="adicionaProduto.jsp">Adicionar
-							Produto</a> <a class="dropdown-item" href="listaProduto.jsp">Listar
-							Produtos</a></li>
+						<a class="dropdown-item" href="adicionaProduto.jsp"> <img
+							alt="" src="adcproduto.svg"> Adicionar Produto
+						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img
+							alt="" src="listar.svg">Listar Produtos
+						</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> Clientes </a>
+					aria-expanded="false"><img alt="" src="clientes.svg">
+						Clientes </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="adicionaClientes.jsp">Adicionar
-							Cliente</a> <a class="dropdown-item" href="listaClientes.jsp">Listar
-							Clientes</a></li>
+						<a class="dropdown-item" href="adicionaClientes.jsp"> <img
+							alt="" src="adcClientes.svg">Adicionar Cliente
+						</a> <a class="dropdown-item" href="listaClientes.jsp"> <img
+							alt="" src="clientes.svg">Listar Clientes
+						</a></li>
 				<li class="nav-item"><a class="nav-link " href="sobreNos.html"
-					tabindex="-1">Sobre nós</a></li>
+					tabindex="-1"> <img alt="" src="quemsomos.svg">Sobre nós
+				</a></li>
 			</ul>
 		</div>
 	</nav>
+	<div style="text-align: center; margin: auto; max-width: 500px; background-color: #dcdcdc;">
+		<form action="adcCliente">
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputEmail4">Nome Completo</label> <input type="text"
+					class="form-control" name="nome">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputPassword4">CPF</label> <input type="text"
+					class="form-control" name="cpf">
+			</div>
+			
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputPassword4">Data de nascimento</label> <input type="text"
+					class="form-control" name="dataNascimento">
+			</div>
+			
+		
+		<div class="form-group col-md-4">
+				<label for="estado">Estado civil</label> <select name="estadoCivil"
+					class="form-control">
+					<option value="">Selecione</option>
+					<option value="SOLTEIRO">Solteiro</option>
+					<option value="CASADO">Casado</option>
+					<option value="VIÚVO">Viúvo</option>
+					<option value="DIVORCIADO">Divorciado</option>
+					<option value="OUTRO">Outro/Não especificado</option>
+			
+				</select>
+			</div>
+	<div class="form-group col-md-4">
+				<label for="estado">Gênero</label> <select name="genero"
+					class="form-control">
+					<option value="">Selecione</option>
+					<option value="MASCULINO">Masculino</option>
+					<option value="FEMININO">Feminino</option>
+					<option value="OUTRO">Outro/Não especificado</option>
+			
+				</select>
+			</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="inputCity">Rua</label> <input type="text"
+					class="form-control" name="rua">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputCity">Bairro</label> <input type="text"
+					class="form-control" name="bairro">
+				<div class="form-group col-md-6">
+					<label for="inputCity">CEP</label> <input type="text"
+						class="form-control" name="cep">
+				</div>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="estado">Estado(UF)</label> <select name="estado"
+					class="form-control">
+					<option value="">Selecione</option>
+					<option value="AC">Acre</option>
+					<option value="AL">Alagoas</option>
+					<option value="AP">Amapá</option>
+					<option value="AM">Amazonas</option>
+					<option value="BA">Bahia</option>
+					<option value="CE">Ceará</option>
+					<option value="DF">Distrito Federal</option>
+					<option value="ES">Espirito Santo</option>
+					<option value="GO">Goiás</option>
+					<option value="MA">Maranhão</option>
+					<option value="MS">Mato Grosso do Sul</option>
+					<option value="MT">Mato Grosso</option>
+					<option value="MG">Minas Gerais</option>
+					<option value="PA">Pará</option>
+					<option value="PB">Paraíba</option>
+					<option value="PR">Paraná</option>
+					<option value="PE">Pernambuco</option>
+					<option value="PI">Piauí</option>
+					<option value="RJ">Rio de Janeiro</option>
+					<option value="RN">Rio Grande do Norte</option>
+					<option value="RS">Rio Grande do Sul</option>
+					<option value="RO">Rondônia</option>
+					<option value="RR">Roraima</option>
+					<option value="SC">Santa Catarina</option>
+					<option value="SP">São Paulo</option>
+					<option value="SE">Sergipe</option>
+					<option value="TO">Tocantins</option>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputCity">Cidade</label> <input type="text"
+					class="form-control" name="cidade">
+			</div>
 
-
-
+		<div class="form-group sticky-top">
+		<button type="submit" class="btn btn-primary">Cadastrar</button>
+		</div>
+		
+	</form>
+		
+	</div>
+	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
