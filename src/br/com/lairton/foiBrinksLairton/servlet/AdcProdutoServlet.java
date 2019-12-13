@@ -20,15 +20,15 @@ public class AdcProdutoServlet extends HttpServlet {
 			HttpServletResponse response) throws IOException, ServletException {
 		PrintWriter out = response.getWriter();
 
-		String nomeProduto = request.getParameter("nome produto");
+		String nomeProduto = request.getParameter("nomeProduto");
 		String marca = request.getParameter("marca");
-		String faixaEtaria = request.getParameter("faixa etaria");
+		String faixaEtaria = request.getParameter("faixaEtaria");
 		double altura = Double.parseDouble(request.getParameter("altura"));
 		double largura = Double.parseDouble(request.getParameter("largura"));
 		double profundidade = Double.parseDouble(request
 				.getParameter("profundidade"));
 		double peso = Double.parseDouble(request.getParameter("peso"));
-		double preco = Double.parseDouble(request.getParameter("preço"));
+		double preco = Double.parseDouble(request.getParameter("preco"));
 
 		Calendar dataCadastro = Calendar.getInstance();
 

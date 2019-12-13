@@ -15,18 +15,17 @@
 <title>FoiBrinks</title>
 <style type="text/css">
 body {
-	background-image: url("BACKGROUND.jpg");
+	background-image: url("BACKGROUND_TELAS.jpg");
 	margin: auto;
-	background-color: #cccccc;
 	background-repeat: repeat;
 }
 </style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.html"> <img src="icon-inicio.png"
-			width="30" height="30" class="d-inline-block align-top" alt="">
-			FoiBrinks
+		<a class="navbar-brand" href="index.html"> <img
+			src="icon-inicio.png" width="30" height="30"
+			class="d-inline-block align-top" alt=""> FoiBrinks
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -46,8 +45,8 @@ body {
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="adicionaProduto.jsp"> <img
 							alt="" src="adcproduto.svg"> Adicionar Produto
-						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img alt=""
-							src="listar.svg">Listar Produtos
+						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img
+							alt="" src="listar.svg">Listar Produtos
 						</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -66,8 +65,78 @@ body {
 			</ul>
 		</div>
 	</nav>
+	<div style="text-align: center; margin: auto; max-width: 500px;">
+		<form action="adcProuto">
+			<div class="form-row">
+				<div class="form-group col-md-8">
+					<label for="inputEmail4">Nome do produto</label> <input type="text"
+						class="form-control" name="nomeProduto"
+						placeholder="Ex: Boneca Annabelle">
+				</div>
+				<div class="container col-md-4">
+					<label for="inputPassword4">Marca</label> <input type="text"
+						class="form-control" name="cpf" placeholder="Ex: Estrela">
+				</div>
+			</div>
 
-	
+			<div class="form-row">
+
+				<div class="container col-md-4">
+					<label for="altura">Alt. do produto</label> <input type="text"
+						class="form-control" name="altura" placeholder="Ex: 17cm">
+				</div>
+				<div class="container col-md-4">
+					<label for="largura">Larg. do produto</label> <input type="text"
+						class="form-control" name="largura" placeholder="Ex: 28 cm">
+				</div>
+				<div class="form-group col-md-4 ">
+					<label for="profundidade">Prof. do produto</label> <input
+						type="text" class="form-control" name="profundidade"
+						placeholder="Ex: 55 cm">
+
+				</div>
+			</div>
+
+
+			<div class="form-row">
+
+				<div class="form-group col-md-4">
+					<label for="estado">Faixa etária</label> <select name="faixaEtaria"
+						class="form-control">
+						<option value="">--Selecione--</option>
+						<option value="0 anos">A partir de 0 anos</option>
+						<option value="2 anos">A partir de 2 anos</option>
+						<option value="4 anos">A partir de 4 anos</option>
+						<option value="6 anos">A partir de 6 anos</option>
+						<option value="A partir de 8 anos">A partir de 8 anos</option>
+
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="peso">Peso do produto</label> <input type="text"
+						class="form-control" name="peso" placeholder="Ex: 300g">
+				</div>
+
+				<div class="form-group col-md-4">
+					<label for="preco">Preço do produto</label> <input type="text"
+						class="form-control" name="preco" placeholder="Ex: R$:37,50">
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck"
+						required> <label class="form-check-label" for="gridCheck">
+						Declaro que TODAS as informações do produto estão corretas. </label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Cadastrar um
+				novo produto</button>
+		</form>
+
+	</div>
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

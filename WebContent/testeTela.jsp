@@ -17,7 +17,7 @@
 body {
 	background-image: url("BACKGROUND_TELAS.jpg");
 	margin: auto;
-
+	background-color: #cccccc;
 	background-repeat: repeat;
 }
 </style>
@@ -66,20 +66,18 @@ body {
 			</ul>
 		</div>
 	</nav>
-	<div
-		style="text-align: center; margin: auto; max-width: 500px; ">
-		<form action="adcCliente">
-			<div class="form-row">
-				<div class="form-group col-md-8">
-					<label for="inputEmail4">Nome Completo</label> <input type="text"
-						class="form-control" name="nome" placeholder="Ex: José da Silva">
-				</div>
-				<div class="container col-md-4">
-					<label for="inputPassword4">CPF</label> <input type="text"
-						class="form-control" name="cpf" placeholder="Ex: 56737202110">
-				</div>
-			</div>
-
+	<div style="text-align: center; margin: auto; max-width: 550px;">
+		<form> action="adcCliente">
+<!-- 			<div class="form-row"> -->
+<!-- 				<div class="form-group col-md-8"> -->
+<!-- 					<label for="inputEmail4">Nome Completo</label> <input type="text" -->
+<!-- 						class="form-control" name="nome" placeholder="Ex: José da Silva"> -->
+<!-- 				</div> -->
+<!-- 				<div class="container col-md-4"> -->
+<!-- 					<label for="inputPassword4">CPF</label> <input type="text" -->
+<!-- 						class="form-control" name="cpf" placeholder="Ex: 56737202110"> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputPassword4">Data de nascimento</label> <input
@@ -109,8 +107,6 @@ body {
 					</select>
 				</div>
 			</div>
-
-
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="inputCity">Rua</label> <input type="text"
@@ -125,7 +121,8 @@ body {
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputCity">Cidade</label> <input type="text"
-						class="form-control" name="cidade" placeholder="Ex: Baixa da égua">
+						class="form-control" name="cidade"
+						placeholder="Ex: Baixa da égua">
 				</div>
 				<div class="form-group col-md-4">
 					<label for="estado">Estado(UF)</label> <select name="estado"
@@ -162,20 +159,18 @@ body {
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputCity">CEP</label> <input type="text"
-						class="form-control" name="cep" placeholder="Ex: 22.773-470">
+							class="form-control" name="cep"
+							placeholder="Ex: 22.773-470">
 				</div>
 			</div>
-	
-
-					<div class="form-group">
+			<div class="form-group">
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" id="gridCheck" required>
+					<input class="form-check-input" type="checkbox" id="gridCheck">
 					<label class="form-check-label" for="gridCheck"> Declaro que TODOS os dados informados estão corretos </label>
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">Cadastrar um novo cliente</button>
 		</form>
-
 	</div>
 
 
