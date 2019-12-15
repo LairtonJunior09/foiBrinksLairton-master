@@ -20,7 +20,7 @@ br.com.lairton.foiBrinksLairton.model.Cliente"
 <title>FoiBrinks</title>
 <style type="text/css">
 body {
-	background-image: url("BACKGROUND_TELAS.jpg");
+	background-image: url("BACKGROUND.jpg");
 	margin: auto;
 	background-repeat: repeat;
 }
@@ -30,8 +30,7 @@ body {
 	<%
 		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
 		ClienteDao dao = new ClienteDao();
-		Cliente cliente = dao.getClienteById(request
-				.getParameter("id_cliente"));
+		Cliente cliente = dao.getClienteById(request.getParameter("id"));
 	%>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -78,123 +77,123 @@ body {
 		</div>
 	</nav>
 
-	<div style="text-align: center; margin: auto; max-width: 500px;">
+	<div
+		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);">
 
 		<form action="alteraCliente">
 			<div class="form-row">
 				<div class="form-group col-md-2">
 					<label for="inputEmail4">ID</label> <input type="text" required
-						class="form-control" name="nome" placeholder="Ex: Id"
-						readonly="true" value=""><br />
-					<div class="form-group col-md-6">
-						<label for="inputEmail4">Nome Completo</label> <input type="text"
-							required class="form-control" name="nome"
-							placeholder="Ex: José da Silva">
-					</div>
-					<div class="container col-md-4">
-						<label for="inputPassword4">CPF</label> <input type="text"
-							required class="form-control" name="cpf"
-							placeholder="Ex: 56737202110">
-					</div>
+						class="form-control" name="id_cliente" placeholder="Ex: Id"><br />
+				</div>
+				<div class="form-group col-md-7">
+					<label for="inputEmail4">Nome Completo</label> <input type="text"
+						required class="form-control" name="nome"
+						placeholder="Ex: José da Silva">
+				</div>
+				<div class="container col-md-3">
+					<label for="inputPassword4">CPF</label> <input type="text" required
+						class="form-control" name="cpf" placeholder="Ex: 56737202110">
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputPassword4">Data de nascimento</label> <input
+						type="text" class="form-control" name="dataNascimento" required
+						placeholder="Ex: 13/12/2011">
+				</div>
+				<div class="container col-md-4">
+					<label for="estado">Estado civil</label> <select name="estadoCivil"
+						class="form-control">
+						<option value="">--Selecione--</option>
+						<option value="SOLTEIRO">Solteiro</option>
+						<option value="CASADO">Casado</option>
+						<option value="VIÚVO">Viúvo</option>
+						<option value="DIVORCIADO">Divorciado</option>
+						<option value="OUTRO">Outro/Não especificado</option>
+
+					</select>
+				</div>
+				<div class="container col-md-4">
+					<label for="estado">Gênero</label> <select name="genero"
+						class="form-control">
+						<option value="">--Selecione--</option>
+						<option value="MASCULINO">Masculino</option>
+						<option value="FEMININO">Feminino</option>
+						<option value="OUTRO">Outro/Não especificado</option>
+
+					</select>
+				</div>
+			</div>
+
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputCity">Rua</label> <input type="text"
+						class="form-control" name="rua" placeholder="Ex: Rua Delta">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputCity">Bairro</label> <input type="text"
+						class="form-control" name="bairro" placeholder="Ex: Centro">
 				</div>
 
-				<div class="form-row">
-					<div class="form-group col-md-4">
-						<label for="inputPassword4">Data de nascimento</label> <input
-							type="text" class="form-control" name="dataNascimento" required
-							placeholder="Ex: 13/12/2011">
-					</div>
-					<div class="container col-md-4">
-						<label for="estado">Estado civil</label> <select
-							name="estadoCivil" class="form-control">
-							<option value="">--Selecione--</option>
-							<option value="SOLTEIRO">Solteiro</option>
-							<option value="CASADO">Casado</option>
-							<option value="VIÚVO">Viúvo</option>
-							<option value="DIVORCIADO">Divorciado</option>
-							<option value="OUTRO">Outro/Não especificado</option>
-
-						</select>
-					</div>
-					<div class="container col-md-4">
-						<label for="estado">Gênero</label> <select name="genero"
-							class="form-control">
-							<option value="">--Selecione--</option>
-							<option value="MASCULINO">Masculino</option>
-							<option value="FEMININO">Feminino</option>
-							<option value="OUTRO">Outro/Não especificado</option>
-
-						</select>
-					</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputCity">Cidade</label> <input type="text"
+						class="form-control" name="cidade" placeholder="Ex: Baixa da égua">
 				</div>
-
-
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<label for="inputCity">Rua</label> <input type="text"
-							class="form-control" name="rua" placeholder="Ex: Rua Delta">
-					</div>
-					<div class="form-group col-md-6">
-						<label for="inputCity">Bairro</label> <input type="text"
-							class="form-control" name="bairro" placeholder="Ex: Centro">
-					</div>
-
+				<div class="form-group col-md-4">
+					<label for="estado">Estado(UF)</label> <select name="estado"
+						class="form-control">
+						<option value="">--Selecione--</option>
+						<option value="AC">Acre</option>
+						<option value="AL">Alagoas</option>
+						<option value="AP">Amapá</option>
+						<option value="AM">Amazonas</option>
+						<option value="BA">Bahia</option>
+						<option value="CE">Ceará</option>
+						<option value="DF">Distrito Federal</option>
+						<option value="ES">Espirito Santo</option>
+						<option value="GO">Goiás</option>
+						<option value="MA">Maranhão</option>
+						<option value="MS">Mato Grosso do Sul</option>
+						<option value="MT">Mato Grosso</option>
+						<option value="MG">Minas Gerais</option>
+						<option value="PA">Pará</option>
+						<option value="PB">Paraíba</option>
+						<option value="PR">Paraná</option>
+						<option value="PE">Pernambuco</option>
+						<option value="PI">Piauí</option>
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="RN">Rio Grande do Norte</option>
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="RO">Rondônia</option>
+						<option value="RR">Roraima</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="SP">São Paulo</option>
+						<option value="SE">Sergipe</option>
+						<option value="TO">Tocantins</option>
+					</select>
 				</div>
-				<div class="form-row">
-					<div class="form-group col-md-4">
-						<label for="inputCity">Cidade</label> <input type="text"
-							class="form-control" name="cidade"
-							placeholder="Ex: Baixa da égua">
-					</div>
-					<div class="form-group col-md-4">
-						<label for="estado">Estado(UF)</label> <select name="estado"
-							class="form-control">
-							<option value="">--Selecione--</option>
-							<option value="AC">Acre</option>
-							<option value="AL">Alagoas</option>
-							<option value="AP">Amapá</option>
-							<option value="AM">Amazonas</option>
-							<option value="BA">Bahia</option>
-							<option value="CE">Ceará</option>
-							<option value="DF">Distrito Federal</option>
-							<option value="ES">Espirito Santo</option>
-							<option value="GO">Goiás</option>
-							<option value="MA">Maranhão</option>
-							<option value="MS">Mato Grosso do Sul</option>
-							<option value="MT">Mato Grosso</option>
-							<option value="MG">Minas Gerais</option>
-							<option value="PA">Pará</option>
-							<option value="PB">Paraíba</option>
-							<option value="PR">Paraná</option>
-							<option value="PE">Pernambuco</option>
-							<option value="PI">Piauí</option>
-							<option value="RJ">Rio de Janeiro</option>
-							<option value="RN">Rio Grande do Norte</option>
-							<option value="RS">Rio Grande do Sul</option>
-							<option value="RO">Rondônia</option>
-							<option value="RR">Roraima</option>
-							<option value="SC">Santa Catarina</option>
-							<option value="SP">São Paulo</option>
-							<option value="SE">Sergipe</option>
-							<option value="TO">Tocantins</option>
-						</select>
-					</div>
-					<div class="form-group col-md-4">
-						<label for="inputCity">CEP</label> <input type="text"
-							class="form-control" name="cep" placeholder="Ex: 22.773-470">
-					</div>
+				<div class="form-group col-md-4">
+					<label for="inputCity">CEP</label> <input type="text"
+						class="form-control" name="cep" placeholder="Ex: 22.773-470">
 				</div>
+			</div>
 
 
-				<div class="form-group">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" id="gridCheck"
-							required> <label class="form-check-label" for="gridCheck">
-							Declaro que TODOS os dados informados estão corretos </label>
-					</div>
+			<div class="form-group">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck"
+						required> <label class="form-check-label" for="gridCheck">
+						Declaro que TODOS os dados informados estão corretos </label>
 				</div>
-				<button type="submit" class="btn btn-primary">Cadastrar um
-					novo cliente</button>
+			</div>
+			<button type="submit" class="btn btn-primary">
+				Atualizar cadastro <img alt="" src="salvar.svg">
+			</button>
 		</form>
 		<a href="listaClientes.jsp"><i class="fas fa-angle-left"></i></a>
 		<audio autoplay loop type="audio/mp3" src="audio/espaco.mp3"></audio>

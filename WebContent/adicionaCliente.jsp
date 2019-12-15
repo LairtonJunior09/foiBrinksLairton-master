@@ -15,9 +15,8 @@
 <title>FoiBrinks</title>
 <style type="text/css">
 body {
-	background-image: url("BACKGROUND_TELAS.jpg");
+	background-image: url("BACKGROUND.jpg");
 	margin: auto;
-
 	background-repeat: repeat;
 }
 </style>
@@ -67,12 +66,13 @@ body {
 		</div>
 	</nav>
 	<div
-		style="text-align: center; margin: auto; max-width: 500px; ">
+		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);"">
 		<form action="adcCliente">
 			<div class="form-row">
 				<div class="form-group col-md-8">
-					<label for="inputEmail4">Nome Completo</label> <input type="text" required
-						class="form-control" name="nome" placeholder="Ex: José da Silva">
+					<label for="inputEmail4">Nome Completo</label> <input type="text"
+						required class="form-control" name="nome"
+						placeholder="Ex: José da Silva">
 				</div>
 				<div class="container col-md-4">
 					<label for="inputPassword4">CPF</label> <input type="text" required
@@ -165,15 +165,19 @@ body {
 						class="form-control" name="cep" placeholder="Ex: 22.773-470">
 				</div>
 			</div>
-	
 
-					<div class="form-group">
+
+			<div class="form-group">
 				<div class="form-check">
-					<input class="form-check-input" type="checkbox" id="gridCheck" required>
-					<label class="form-check-label" for="gridCheck"> Declaro que TODOS os dados informados estão corretos </label>
+					<input class="form-check-input" type="checkbox" id="gridCheck"
+						required> <label class="form-check-label" for="gridCheck">
+						Declaro que TODOS os dados informados estão corretos </label>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Cadastrar um novo cliente</button>
+			<button type="submit" class="btn btn-primary">Cadastrar um
+				novo cliente
+				<img alt="" src="salvar.svg"></button>
+
 		</form>
 
 	</div>

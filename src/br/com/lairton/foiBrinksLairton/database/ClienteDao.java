@@ -81,7 +81,7 @@ public class ClienteDao {
 	}
 
 	public void DeletCliente(Cliente cliente) {
-		String bd = "DELETE FROM `produtos` WHERE  `id_produto`=?";
+		String bd = "Delete * from clientes where id_cliente = ?";
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
 
@@ -95,7 +95,7 @@ public class ClienteDao {
 
 	public Cliente getClienteById(String id) {
 		Cliente cliente = new Cliente();
-		String bd = "SELECT FROM `clientes` id_cliente`=?";
+		String bd = "Select * from clientes where id_cliente = ?";
 
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);

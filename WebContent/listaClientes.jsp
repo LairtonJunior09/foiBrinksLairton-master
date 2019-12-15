@@ -74,7 +74,7 @@ body {
 		</div>
 	</nav>
 	<div
-		style="text-align: center; margin: auto; max-width: 1500px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff);">
+		style="text-align: center; margin: auto; max-width: 1500px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff);box-shadow: 6px 5px 8px rgba(0,0,0,0.5);">
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
