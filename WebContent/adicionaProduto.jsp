@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<!-- Meta tags Obrigatórias -->
+
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,13 +69,13 @@ body {
 		<form action="adcProuto">
 			<div class="form-row">
 				<div class="form-group col-md-8">
-					<label for="inputEmail4">Nome do produto</label> <input type="text"
+					<label for="inputEmail4">Nome do produto</label> <input type="text" required
 						class="form-control" name="nomeProduto"
 						placeholder="Ex: Boneca Annabelle">
 				</div>
 				<div class="container col-md-4">
-					<label for="inputPassword4">Marca</label> <input type="text"
-						class="form-control" name="cpf" placeholder="Ex: Estrela">
+					<label for="inputPassword4">Marca</label> <input type="text" required
+						class="form-control" name="marca" placeholder="Ex: Estrela">
 				</div>
 			</div>
 

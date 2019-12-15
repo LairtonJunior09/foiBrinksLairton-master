@@ -53,6 +53,9 @@ public class ClienteDao {
 		String bd = "UPDATE `clientes` SET `nome_completo`=?,`estadoCivil`=?,"
 				+ "`gênero`=?,`rua`=?,`bairro`=?,`cep`=?,`estado`=?,`cidade`=?,`cpf`=?,"
 				+ "`dataNascimento`=?,`dataCadastro`=? WHERE `id_cliente`=?";
+		
+		
+		
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
 			prepState.setString(1, cliente.getNome_completo());
@@ -62,13 +65,14 @@ public class ClienteDao {
 			prepState.setString(5, cliente.getBairro());
 			prepState.setString(6, cliente.getCep());
 			prepState.setString(7, cliente.getEstado());
-			prepState.setString(8, cliente.getCpf());
+			prepState.setString(8, cliente.getCidade());
+			prepState.setString(9, cliente.getCpf());
 
-			prepState.setDate(9, new Date(cliente.getDataNascimento()
+			prepState.setDate(10, new Date(cliente.getDataNascimento()
 					.getTimeInMillis()));
-			prepState.setDate(10, new Date(cliente.getDataCadastro()
+			prepState.setDate(11, new Date(cliente.getDataCadastro()
 					.getTimeInMillis()));
-			prepState.setLong(11, cliente.getId_cliente());
+			prepState.setLong(12, cliente.getId_cliente());
 			prepState.execute();
 			prepState.close();
 		} catch (SQLException e) {
@@ -99,14 +103,15 @@ public class ClienteDao {
 			ResultSet rs = prepState.executeQuery();
 
 			while (rs.next()) {
-				cliente.setId_cliente(rs.getLong("Id"));
-				cliente.setNome_completo(rs.getString("Nome"));
-				cliente.setEstadoCivil(rs.getString("Estado Civil"));
-				cliente.setGênero(rs.getString("Genero"));
-				cliente.setRua(rs.getString("Rua"));
-				cliente.setBairro(rs.getString("Bairro"));
-				cliente.setCep(rs.getString("Cep"));
-				cliente.setEstado(rs.getString("Estado"));
+				cliente.setId_cliente(rs.getLong("id_cliente"));
+				cliente.setNome_completo(rs.getString("nome_completo"));
+				cliente.setEstadoCivil(rs.getString("estadoCivil"));
+				cliente.setGênero(rs.getString("gênero"));
+				cliente.setRua(rs.getString("rua"));
+				cliente.setBairro(rs.getString("bairro"));
+				cliente.setCep(rs.getString("cep"));
+				cliente.setEstado(rs.getString("estado"));
+				cliente.setCpf(rs.getString("cpf"));
 
 				Calendar data = Calendar.getInstance();
 				cliente.setDataNascimento(data);
@@ -127,26 +132,35 @@ public class ClienteDao {
 		try {
 			List<Cliente> clientes = new ArrayList<Cliente>();
 			PreparedStatement prepState = this.connection
-					.prepareStatement("SELECT FROM `clientes` id_cliente`=?");
+					.prepareStatement("SELECT * FROM `clientes` ");
 			ResultSet rs = prepState.executeQuery();
 
 			while (rs.next()) {
 
 				Cliente cliente = new Cliente();
-				cliente.setId_cliente(rs.getLong("Id"));
-				cliente.setNome_completo(rs.getString("Nome"));
-				cliente.setEstadoCivil(rs.getString("Estado Civil"));
-				cliente.setGênero(rs.getString("Genero"));
-				cliente.setRua(rs.getString("Rua"));
-				cliente.setBairro(rs.getString("Bairro"));
-				cliente.setCep(rs.getString("Cep"));
-				cliente.setEstado(rs.getString("Estado"));
+				cliente.setId_cliente(rs.getLong("id_cliente"));
+				cliente.setNome_completo(rs.getString("nome_completo"));
+				cliente.setEstadoCivil(rs.getString("estadoCivil"));
+				cliente.setGênero(rs.getString("gênero"));
+				cliente.setRua(rs.getString("rua"));
+				cliente.setBairro(rs.getString("bairro"));
+				cliente.setCep(rs.getString("cep"));
+				cliente.setEstado(rs.getString("estado"));
+				cliente.setCpf(rs.getString("cpf"));
+				cliente.setCidade(rs.getString("cidade"));
+				
+				Calendar dataNascimento = Calendar.getInstance();
 
-				Calendar data = Calendar.getInstance();
-				cliente.setDataNascimento(data);
-				data.setTime(rs.getDate("dataNascimento"));
-				cliente.setDataCadastro(data);
-				data.setTime(rs.getDate("dataCadastro"));
+				dataNascimento.setTime(rs.getDate("dataNascimento"));
+
+				cliente.setDataNascimento(dataNascimento);
+
+
+				Calendar dataCadastro = Calendar.getInstance();
+
+				dataCadastro.setTime(rs.getDate("dataCadastro"));
+
+				cliente.setDataCadastro(dataCadastro);
 
 				clientes.add(cliente);
 			}

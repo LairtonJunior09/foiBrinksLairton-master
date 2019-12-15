@@ -71,11 +71,11 @@ body {
 		<form action="adcCliente">
 			<div class="form-row">
 				<div class="form-group col-md-8">
-					<label for="inputEmail4">Nome Completo</label> <input type="text"
+					<label for="inputEmail4">Nome Completo</label> <input type="text" required
 						class="form-control" name="nome" placeholder="Ex: José da Silva">
 				</div>
 				<div class="container col-md-4">
-					<label for="inputPassword4">CPF</label> <input type="text"
+					<label for="inputPassword4">CPF</label> <input type="text" required
 						class="form-control" name="cpf" placeholder="Ex: 56737202110">
 				</div>
 			</div>
@@ -83,7 +83,7 @@ body {
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="inputPassword4">Data de nascimento</label> <input
-						type="text" class="form-control" name="dataNascimento"
+						type="text" class="form-control" name="dataNascimento" required
 						placeholder="Ex: 13/12/2011">
 				</div>
 				<div class="container col-md-4">
