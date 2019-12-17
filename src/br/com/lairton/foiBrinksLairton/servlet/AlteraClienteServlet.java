@@ -9,13 +9,14 @@ import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.lairton.foiBrinksLairton.database.ClienteDao;
 import br.com.lairton.foiBrinksLairton.model.Cliente;
-
+@WebServlet("/alteraCliente")
 public class AlteraClienteServlet extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
@@ -69,7 +70,7 @@ public class AlteraClienteServlet extends HttpServlet {
 		ClienteDao dao = new ClienteDao();
 		dao.updateCliente(cliente);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaClientes.jsp");
 		rd.forward(request, response);
 	}
 

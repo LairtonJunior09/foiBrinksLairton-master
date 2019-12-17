@@ -48,7 +48,7 @@ public class AdcProdutoServlet extends HttpServlet {
 		ProdutoDao dao = new ProdutoDao();
 		dao.addProduto(produto);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("/l");
 		rd.forward(request, response);
 	}
 }

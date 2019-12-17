@@ -19,7 +19,7 @@ br.com.lairton.foiBrinksLairton.model.Cliente"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<title> Listar clientes</title>
+<title>Listar clientes</title>
 <style type="text/css">
 body {
 	background-image: url("BACKGROUND.jpg");
@@ -31,9 +31,9 @@ body {
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.html"> <img src="icon-inicio.png"
-			width="30" height="30" class="d-inline-block align-top" alt="">
-			FoiBrinks
+		<a class="navbar-brand" href="index.html"> <img
+			src="icon-inicio.png" width="30" height="30"
+			class="d-inline-block align-top" alt=""> FoiBrinks
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -53,8 +53,8 @@ body {
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="adicionaProduto.jsp"> <img
 							alt="" src="adcproduto.svg"> Adicionar Produto
-						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img alt=""
-							src="listar.svg">Listar Produtos
+						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img
+							alt="" src="listar.svg">Listar Produtos
 						</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -74,7 +74,7 @@ body {
 		</div>
 	</nav>
 	<div
-		style="text-align: center; margin: auto; max-width: 1500px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff);box-shadow: 6px 5px 8px rgba(0,0,0,0.5);">
+		style="text-align: center; margin: auto; max-width: 1500px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);">
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
@@ -95,9 +95,9 @@ body {
 			</thead>
 			<%
 				SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
-							ClienteDao dao = new ClienteDao();
-							List<Cliente> clientes = dao.getLista();
-							for (Cliente cliente : clientes ) {
+								ClienteDao dao = new ClienteDao();
+								List<Cliente> clientes = dao.getLista();
+								for (Cliente cliente : clientes ) {
 			%>
 			<tbody class="item">
 				<tr>
@@ -113,11 +113,11 @@ body {
 					<td><%=cliente.getEstado()%></td>
 					<td><%=sdt.format(cliente.getDataCadastro().getTime())%></td>
 
+
 					<td><a
 						href="alteraCliente.jsp?id=<%=cliente.getId_cliente()%>"><i
 							class="fas fa-user-edit"></i>Alterar</a></td>
-					<td><a
-						href="excluiCliente.jsp?id=<%=cliente.getId_cliente()%>"><i
+					<td><a href="excluiCliente.jsp?id=<%=cliente.getId_cliente()%>"><i
 							class="fas fa-user-minus"></i>Remover</a></td>
 				</tr>
 			</tbody>
@@ -129,7 +129,7 @@ body {
 	<button id="topBtn">
 		<i class="fas fa-arrow-up"></i>
 	</button>
-	<audio autoplay loop type="audio/mp3" src="audio/espaco.mp3"></audio>
+
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

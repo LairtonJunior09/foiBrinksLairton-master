@@ -83,17 +83,21 @@ body {
 		<form action="alteraCliente">
 			<div class="form-row">
 				<div class="form-group col-md-2">
-					<label for="inputEmail4">ID</label> <input type="text" required
-						class="form-control" name="id_cliente" placeholder="Ex: Id"><br />
+					<label for="inputEmail4">ID</label> <input type="text"
+						class="form-control" name="id_cliente" placeholder="Ex: Id"
+						value="<%=cliente.getId_cliente()%>"> <br />
 				</div>
 				<div class="form-group col-md-7">
 					<label for="inputEmail4">Nome Completo</label> <input type="text"
 						required class="form-control" name="nome"
+						value="<%=cliente.getNome_completo()%>"
 						placeholder="Ex: José da Silva">
 				</div>
 				<div class="container col-md-3">
 					<label for="inputPassword4">CPF</label> <input type="text" required
-						class="form-control" name="cpf" placeholder="Ex: 56737202110">
+						class="form-control" name="cpf" value="<%=cliente.getCpf()%>"
+						placeholder="Ex: 56737202110">
+
 				</div>
 			</div>
 
@@ -101,12 +105,13 @@ body {
 				<div class="form-group col-md-4">
 					<label for="inputPassword4">Data de nascimento</label> <input
 						type="text" class="form-control" name="dataNascimento" required
+						value="<%=sdt.format(cliente.getDataCadastro().getTime())%>"
 						placeholder="Ex: 13/12/2011">
 				</div>
 				<div class="container col-md-4">
 					<label for="estado">Estado civil</label> <select name="estadoCivil"
 						class="form-control">
-						<option value="">--Selecione--</option>
+						<option value="<%=cliente.getEstadoCivil()%>"><%=cliente.getEstadoCivil()%></option>
 						<option value="SOLTEIRO">Solteiro</option>
 						<option value="CASADO">Casado</option>
 						<option value="VIÚVO">Viúvo</option>
@@ -118,7 +123,7 @@ body {
 				<div class="container col-md-4">
 					<label for="estado">Gênero</label> <select name="genero"
 						class="form-control">
-						<option value="">--Selecione--</option>
+						<option value="<%=cliente.getGênero()%>"><%=cliente.getGênero()%></option>
 						<option value="MASCULINO">Masculino</option>
 						<option value="FEMININO">Feminino</option>
 						<option value="OUTRO">Outro/Não especificado</option>
@@ -131,23 +136,26 @@ body {
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="inputCity">Rua</label> <input type="text"
-						class="form-control" name="rua" placeholder="Ex: Rua Delta">
+						class="form-control" name="rua" placeholder="Ex: Rua Delta"
+						value="<%=cliente.getRua()%>">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputCity">Bairro</label> <input type="text"
-						class="form-control" name="bairro" placeholder="Ex: Centro">
+						class="form-control" name="bairro" placeholder="Ex: Centro"
+						value="<%=cliente.getBairro()%>">
 				</div>
 
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-4">
-					<label for="inputCity">Cidade</label> <input type="text"
-						class="form-control" name="cidade" placeholder="Ex: Baixa da égua">
+					<label for="cidae">Cidade</label> <input type="text"
+						class="form-control" name="cidade" placeholder="Ex: Baixa da égua"
+						value="<%=cliente.getCidade()%>">
 				</div>
 				<div class="form-group col-md-4">
 					<label for="estado">Estado(UF)</label> <select name="estado"
 						class="form-control">
-						<option value="">--Selecione--</option>
+						<option value="<%=cliente.getEstado()%>"><%=cliente.getEstado()%></option>
 						<option value="AC">Acre</option>
 						<option value="AL">Alagoas</option>
 						<option value="AP">Amapá</option>
@@ -179,7 +187,8 @@ body {
 				</div>
 				<div class="form-group col-md-4">
 					<label for="inputCity">CEP</label> <input type="text"
-						class="form-control" name="cep" placeholder="Ex: 22.773-470">
+						class="form-control" name="cep" placeholder="Ex: 22.773-470"
+						value="<%=cliente.getCep()%>">
 				</div>
 			</div>
 
@@ -192,11 +201,12 @@ body {
 				</div>
 			</div>
 			<button type="submit" class="btn btn-primary">
-				Atualizar cadastro <img alt="" src="salvar.svg">
+				Atualizar cadastro <img alt="" src="salvar.svg"> <i
+					class="fas fa-angle-left"></i></a>
 			</button>
 		</form>
-		<a href="listaClientes.jsp"><i class="fas fa-angle-left"></i></a>
-		<audio autoplay loop type="audio/mp3" src="audio/espaco.mp3"></audio>
+
+
 		<script type="text/javascript" src="js/script.js"></script>
 
 	</div>

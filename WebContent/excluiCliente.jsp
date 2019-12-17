@@ -84,7 +84,7 @@ body {
 					.getRequestDispatcher("/listaClientes.jsp");
 			rd.forward(request, response);
 		%>
-		<a href="index.html"><i class="fas fa-angle-left"></i></a>
+		<a href="listaClientes.jsp"><i class="fas fa-angle-left"></i></a>
 
 	</div>
 </body>

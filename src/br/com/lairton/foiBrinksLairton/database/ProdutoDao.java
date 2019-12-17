@@ -54,14 +54,14 @@ public class ProdutoDao {
 			prepState.setString(1, produto.getNomeProduto());
 			prepState.setString(2, produto.getMarca());
 			prepState.setString(3, produto.getFaixaEtaria());
-			prepState.setLong(4, (long) produto.getAltura());
-			prepState.setLong(5, (long) produto.getLargura());
-			prepState.setLong(6, (long) produto.getProfundidade());
-			prepState.setLong(7, (long) produto.getPeso());
-			prepState.setLong(8, (long) produto.getPreco());
+			prepState.setDouble(4, produto.getAltura());
+			prepState.setDouble(5, produto.getLargura());
+			prepState.setDouble(6, produto.getProfundidade());
+			prepState.setDouble(7, produto.getPeso());
+			prepState.setDouble(8, produto.getPreco());
 			prepState.setDate(9, new Date(produto.getDataCadastro()
 					.getTimeInMillis()));
-			prepState.setLong(11, produto.getId_produto());
+			prepState.setLong(10, produto.getId_produto());
 
 			prepState.execute();
 			prepState.close();
@@ -86,7 +86,7 @@ public class ProdutoDao {
 
 	public Produto getProdutoById(String id) {
 		Produto produto = new Produto();
-		String bd = "SELECT FROM `produtos` WHERE  `id_produto`=?";
+		String bd = "SELECT * FROM `produtos` WHERE id_produto = ?";
 
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
@@ -95,7 +95,7 @@ public class ProdutoDao {
 
 			while (rs.next()) {
 				produto.setId_produto(rs.getLong("id_produto"));
-				produto.setNomeProduto(rs.getString("nome_completo"));
+				produto.setNomeProduto(rs.getString("nomeProduto"));
 				produto.setMarca(rs.getString("marca"));
 				produto.setFaixaEtaria(rs.getString("faixaEtaria"));
 				produto.setAltura(rs.getDouble("altura"));
@@ -105,7 +105,7 @@ public class ProdutoDao {
 
 				Calendar data = Calendar.getInstance();
 				produto.setDataCadastro(data);
-				data.setTime(rs.getDate("DataCadastro"));
+				data.setTime(rs.getDate("dataCadastro"));
 
 			}
 			rs.close();

@@ -81,7 +81,7 @@ public class ClienteDao {
 	}
 
 	public void DeletCliente(Cliente cliente) {
-		String bd = "Delete * from clientes where id_cliente = ?";
+		String bd = "delete from clientes where id_cliente = ?";
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
 
@@ -112,6 +112,7 @@ public class ClienteDao {
 				cliente.setCep(rs.getString("cep"));
 				cliente.setEstado(rs.getString("estado"));
 				cliente.setCpf(rs.getString("cpf"));
+				cliente.setCidade(rs.getString("cidade"));
 
 				Calendar data = Calendar.getInstance();
 				cliente.setDataNascimento(data);

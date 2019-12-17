@@ -67,7 +67,7 @@ public class AdcClienteServlet extends HttpServlet {
 		ClienteDao dao = new ClienteDao();
 		dao.addCliente(cliente);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaClientes.jsp");
 		rd.forward(request, response);
 	}
 }

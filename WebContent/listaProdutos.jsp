@@ -19,7 +19,7 @@ br.com.lairton.foiBrinksLairton.model.Produto"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<title> Listar clientes</title>
+<title>Listar clientes</title>
 <style type="text/css">
 body {
 	background-image: url("BACKGROUND.jpg");
@@ -31,9 +31,9 @@ body {
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.html"> <img src="icon-inicio.png"
-			width="30" height="30" class="d-inline-block align-top" alt="">
-			FoiBrinks
+		<a class="navbar-brand" href="index.html"> <img
+			src="icon-inicio.png" width="30" height="30"
+			class="d-inline-block align-top" alt=""> FoiBrinks
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -53,8 +53,8 @@ body {
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="adicionaProduto.jsp"> <img
 							alt="" src="adcproduto.svg"> Adicionar Produto
-						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img alt=""
-							src="listar.svg">Listar Produtos
+						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img
+							alt="" src="listar.svg">Listar Produtos
 						</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -94,9 +94,9 @@ body {
 			</thead>
 			<%
 				SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
-							ProdutoDao dao = new ProdutoDao();
-							List<Produto> produtos = dao.getLista();
-							for (Produto produto : produtos ) {
+									ProdutoDao dao = new ProdutoDao();
+									List<Produto> produtos = dao.getLista();
+									for (Produto produto : produtos ) {
 			%>
 			<tbody class="item">
 				<tr>
@@ -111,6 +111,7 @@ body {
 					<td><%=produto.getPreco()%></td>
 					<td><%=sdt.format(produto.getDataCadastro().getTime())%></td>
 
+
 					<td><a
 						href="alteraProduto.jsp?id=<%=produto.getId_produto()%>"><i
 							class="fas fa-user-edit"></i>Alterar</a></td>
@@ -118,6 +119,7 @@ body {
 						href="excluiProduto.jsp?id=<%=produto.getId_produto()%>"><i
 							class="fas fa-user-minus"></i>Remover</a></td>
 				</tr>
+
 			</tbody>
 			<%
 				}

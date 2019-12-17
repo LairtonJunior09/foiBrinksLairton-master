@@ -1,3 +1,8 @@
+<%@ page
+	import="java.util.*,
+br.com.lairton.foiBrinksLairton.database.ProdutoDao,
+br.com.lairton.foiBrinksLairton.model.Produto"
+	import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,6 +27,12 @@ body {
 </style>
 </head>
 <body>
+	<%
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+		ProdutoDao dao = new ProdutoDao();
+		Produto produto = dao.getProdutoById(request.getParameter("id"));
+	%>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="index.html"> <img
 			src="icon-inicio.png" width="30" height="30"
@@ -65,104 +76,76 @@ body {
 			</ul>
 		</div>
 	</nav>
+
 	<div
-		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);"">
-		<form action="adcCliente">
+		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);">
+
+		<form action="alteraProduto">
 			<div class="form-row">
+				<div class="form-group col-md-2">
+					<label for="inputEmail4">ID</label> <input type="text"
+						class="form-control" name="id_produto" placeholder="Ex: Id"
+						value="<%=produto.getId_produto()%>"> <br />
+				</div>
 				<div class="form-group col-md-8">
-					<label for="inputEmail4">Nome Completo</label> <input type="text"
-						required class="form-control" name="nome"
-						placeholder="Ex: José da Silva">
+					<label for="inputEmail4">Nome do produto</label> <input type="text"
+						required class="form-control" name="nomeProduto"
+						placeholder="Ex: Boneca Annabelle"
+						value="<%=produto.getNomeProduto()%>"> 
 				</div>
 				<div class="container col-md-4">
-					<label for="inputPassword4">CPF</label> <input type="text" required
-						class="form-control" name="cpf" placeholder="Ex: 56737202110">
+					<label for="inputPassword4">Marca</label> <input type="text"
+						required class="form-control" name="marca"
+						placeholder="Ex: Estrela" value="<%=produto.getMarca()%>">
 				</div>
 			</div>
 
 			<div class="form-row">
-				<div class="form-group col-md-4">
-					<label for="inputPassword4">Data de nascimento</label> <input
-						type="text" class="form-control" name="dataNascimento" required
-						placeholder="Ex: 13/12/2011">
+
+				<div class="container col-md-4">
+					<label for="altura">Alt. do produto</label> <input type="text"
+						class="form-control" name="altura" placeholder="Ex: 17cm"
+						value="<%=produto.getAltura()%>">
 				</div>
 				<div class="container col-md-4">
-					<label for="estado">Estado civil</label> <select name="estadoCivil"
-						class="form-control">
-						<option value="">--Selecione--</option>
-						<option value="SOLTEIRO">Solteiro</option>
-						<option value="CASADO">Casado</option>
-						<option value="VIÚVO">Viúvo</option>
-						<option value="DIVORCIADO">Divorciado</option>
-						<option value="OUTRO">Outro/Não especificado</option>
-
-					</select>
+					<label for="largura">Larg. do produto</label> <input type="text"
+						class="form-control" name="largura" placeholder="Ex: 28 cm"
+						value="<%=produto.getLargura()%>">
 				</div>
-				<div class="container col-md-4">
-					<label for="estado">Gênero</label> <select name="genero"
-						class="form-control">
-						<option value="">--Selecione--</option>
-						<option value="MASCULINO">Masculino</option>
-						<option value="FEMININO">Feminino</option>
-						<option value="OUTRO">Outro/Não especificado</option>
+				<div class="form-group col-md-4 ">
+					<label for="profundidade">Prof. do produto</label> <input
+						type="text" class="form-control" name="profundidade"
+						placeholder="Ex: 55 cm"
+						value="<%=produto.getProfundidade()%>">
 
-					</select>
 				</div>
 			</div>
 
 
 			<div class="form-row">
-				<div class="form-group col-md-6">
-					<label for="inputCity">Rua</label> <input type="text"
-						class="form-control" name="rua" placeholder="Ex: Rua Delta">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="inputCity">Bairro</label> <input type="text"
-						class="form-control" name="bairro" placeholder="Ex: Centro">
-				</div>
 
-			</div>
-			<div class="form-row">
 				<div class="form-group col-md-4">
-					<label for="inputCity">Cidade</label> <input type="text"
-						class="form-control" name="cidade" placeholder="Ex: Baixa da égua">
-				</div>
-				<div class="form-group col-md-4">
-					<label for="estado">Estado(UF)</label> <select name="estado"
+					<label for="estado">Faixa etária</label> <select name="faixaEtaria"
 						class="form-control">
-						<option value="">--Selecione--</option>
-						<option value="AC">Acre</option>
-						<option value="AL">Alagoas</option>
-						<option value="AP">Amapá</option>
-						<option value="AM">Amazonas</option>
-						<option value="BA">Bahia</option>
-						<option value="CE">Ceará</option>
-						<option value="DF">Distrito Federal</option>
-						<option value="ES">Espirito Santo</option>
-						<option value="GO">Goiás</option>
-						<option value="MA">Maranhão</option>
-						<option value="MS">Mato Grosso do Sul</option>
-						<option value="MT">Mato Grosso</option>
-						<option value="MG">Minas Gerais</option>
-						<option value="PA">Pará</option>
-						<option value="PB">Paraíba</option>
-						<option value="PR">Paraná</option>
-						<option value="PE">Pernambuco</option>
-						<option value="PI">Piauí</option>
-						<option value="RJ">Rio de Janeiro</option>
-						<option value="RN">Rio Grande do Norte</option>
-						<option value="RS">Rio Grande do Sul</option>
-						<option value="RO">Rondônia</option>
-						<option value="RR">Roraima</option>
-						<option value="SC">Santa Catarina</option>
-						<option value="SP">São Paulo</option>
-						<option value="SE">Sergipe</option>
-						<option value="TO">Tocantins</option>
+						<option value="<%=produto.getFaixaEtaria()%>"><%=produto.getFaixaEtaria()%></option>
+						<option value="0 anos">A partir de 0 anos</option>
+						<option value="2 anos">A partir de 2 anos</option>
+						<option value="4 anos">A partir de 4 anos</option>
+						<option value="6 anos">A partir de 6 anos</option>
+						<option value="A partir de 8 anos">A partir de 8 anos</option>
+
 					</select>
 				</div>
 				<div class="form-group col-md-4">
-					<label for="inputCity">CEP</label> <input type="text"
-						class="form-control" name="cep" placeholder="Ex: 22.773-470">
+					<label for="peso">Peso do produto</label> <input type="text"
+						class="form-control" name="peso" placeholder="Ex: 300g"
+						value="<%=produto.getPeso()%>">
+				</div>
+
+				<div class="form-group col-md-4">
+					<label for="preco">Preço do produto</label> <input type="text"
+						class="form-control" name="preco" placeholder="Ex: R$:37,50"
+						value="<%=produto.getPreco()%>">
 				</div>
 			</div>
 
@@ -171,14 +154,14 @@ body {
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="gridCheck"
 						required> <label class="form-check-label" for="gridCheck">
-						Declaro que TODOS os dados informados estão corretos </label>
+						Declaro que TODAS as informações do produto estão corretas. </label>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">
-				Cadastrar um novo cliente <img alt="" src="salvar.svg">
-			</button>
-	</div>
+			<button type="submit" class="btn btn-primary">Atualizar
+				cadastro</button>
+		</form>
 
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
