@@ -44,11 +44,10 @@ public class AdcProdutoServlet extends HttpServlet {
 
 		produto.setDataCadastro(dataCadastro);
 
-		// salva o contato
 		ProdutoDao dao = new ProdutoDao();
 		dao.addProduto(produto);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/l");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaProdutos.jsp");
 		rd.forward(request, response);
 	}
 }

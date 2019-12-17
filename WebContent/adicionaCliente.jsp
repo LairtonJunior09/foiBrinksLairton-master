@@ -66,7 +66,7 @@ body {
 		</div>
 	</nav>
 	<div
-		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);"">
+		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);">
 		<form action="adcCliente">
 			<div class="form-row">
 				<div class="form-group col-md-8">

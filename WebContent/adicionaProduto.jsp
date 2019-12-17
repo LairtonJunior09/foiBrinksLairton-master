@@ -15,7 +15,7 @@
 <title>FoiBrinks</title>
 <style type="text/css">
 body {
-	background-image: url("BACKGROUND_TELAS.jpg");
+	background-image: url("BACKGROUND.jpg");
 	margin: auto;
 	background-repeat: repeat;
 }
@@ -65,17 +65,19 @@ body {
 			</ul>
 		</div>
 	</nav>
-	<div style="text-align: center; margin: auto; max-width: 500px;">
+	<div
+		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);""">
 		<form action="adcProuto">
 			<div class="form-row">
 				<div class="form-group col-md-8">
-					<label for="inputEmail4">Nome do produto</label> <input type="text" required
-						class="form-control" name="nomeProduto"
+					<label for="inputEmail4">Nome do produto</label> <input type="text"
+						required class="form-control" name="nomeProduto"
 						placeholder="Ex: Boneca Annabelle">
 				</div>
 				<div class="container col-md-4">
-					<label for="inputPassword4">Marca</label> <input type="text" required
-						class="form-control" name="marca" placeholder="Ex: Estrela">
+					<label for="inputPassword4">Marca</label> <input type="text"
+						required class="form-control" name="marca"
+						placeholder="Ex: Estrela">
 				</div>
 			</div>
 
@@ -131,8 +133,9 @@ body {
 						Declaro que TODAS as informações do produto estão corretas. </label>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">Cadastrar um
-				novo produto</button>
+			<button type="submit" class="btn btn-primary">
+				Cadastrar um novo produto <img alt="" src="salvar.svg">
+			</button>
 		</form>
 
 	</div>
