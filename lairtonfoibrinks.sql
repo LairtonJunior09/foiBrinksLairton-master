@@ -29,3 +29,15 @@ create table produtos (
 primary key (id_produto)
 
 );
+create table dependente_cliente (
+	
+	id_dependente smallint auto_increment,
+	id_cliente smallint,
+	nomeDependente varchar(246),
+	dataNascimento date,
+	gênero varchar(246),
+	
+primary key (id_dependente),
+FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
+
+);

@@ -71,7 +71,7 @@ public class AlteraClienteServlet extends HttpServlet {
 		cliente.setDataNascimento(dataNascimento);
 		cliente.setDataCadastro(dataCadastro);
 
-		// salva o contato
+
 		ClienteDao dao = new ClienteDao();
 		dao.updateCliente(cliente);
 
