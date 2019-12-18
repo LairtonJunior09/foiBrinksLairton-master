@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.lairton.foiBrinksLairton.database.ProdutoDao;
 import br.com.lairton.foiBrinksLairton.model.Produto;
-
+/**
+ * Classe responsável por transformar os dados digitados no .jsp em java objects
+ * @author lairton
+ *
+ */
 @WebServlet("/adcProuto")
 public class AdcProdutoServlet extends HttpServlet {
 	protected void service(HttpServletRequest request,

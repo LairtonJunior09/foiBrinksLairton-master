@@ -16,7 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.lairton.foiBrinksLairton.database.ClienteDao;
 import br.com.lairton.foiBrinksLairton.model.Cliente;
-
+/**
+ * Classe responsável por transformar os dados digitados no .jsp em java objects
+ * @author lairton
+ *
+ */
 @WebServlet("/adcCliente")
 public class AdcClienteServlet extends HttpServlet {
 	protected void service(HttpServletRequest request,

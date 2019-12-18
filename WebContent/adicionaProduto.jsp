@@ -54,7 +54,7 @@ body {
 					aria-expanded="false"><img alt="" src="clientes.svg">
 						Clientes </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="adicionaClientes.jsp"> <img
+						<a class="dropdown-item" href="adicionaCliente.jsp"> <img
 							alt="" src="adcClientes.svg">Adicionar Cliente
 						</a> <a class="dropdown-item" href="listaClientes.jsp"> <img
 							alt="" src="clientes.svg">Listar Clientes

@@ -1,7 +1,11 @@
 package br.com.lairton.foiBrinksLairton.model;
 
 import java.util.Calendar;
-
+/**
+ * Classe responsável por criar um modelo da entidade 'cliente' no banco de dados
+ * @author lairton
+ *
+ */
 public class Cliente {
 	private long id_cliente;
 	private String nome_completo;

@@ -10,7 +10,11 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.lairton.foiBrinksLairton.model.Produto;
-
+/**
+ * Classe responsável por realizar as operações do banco de dados
+ * @author lairton
+ *
+ */
 public class ProdutoDao {
 	private Connection connection;
 
@@ -18,7 +22,11 @@ public class ProdutoDao {
 		connection = new ConnectionFactory().getConnection();
 
 	}
-
+	/**
+	 * Método responsável por adicionar um produto ao banco de dados
+	 * @author lairton
+	 *
+	 */
 	public void addProduto(Produto produto) {
 		String bd = "INSERT INTO `produtos`(`nomeProduto`, `marca`, `faixaEtaria`, `altura`,"
 				+ " `largura`, `profundidade`, `peso`, `preco`, `dataCadastro`)"
@@ -43,7 +51,11 @@ public class ProdutoDao {
 		} catch (SQLException exp) {
 		}
 	}
-
+	/**
+	 * Método responsável por alterar as informações do produto no banco de dados
+	 * @author lairton
+	 *
+	 */
 	public void updateProduto(Produto produto) {
 		String bd = "UPDATE `produtos` SET `nomeProduto`=?,`marca`=?,`faixaEtaria`=?,"
 				+ "`altura`=?,`largura`=?,`profundidade`=?,`peso`=?,`preco`=?,`dataCadastro`=?"
@@ -70,7 +82,11 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-
+	/**
+	 * Método responsável por apagar um produto do banco de dados
+	 * @author lairton
+	 *
+	 */
 	public void DeletProduct(Produto produto) {
 		String bd = "DELETE FROM `produtos` WHERE  `id_produto`=?";
 		try {
@@ -83,7 +99,11 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-
+	/**
+	 * Método responsável por realizar a busca de um produto pela String id no banco de dados
+	 * @author lairton
+	 *
+	 */
 	public Produto getProdutoById(String id) {
 		Produto produto = new Produto();
 		String bd = "SELECT * FROM `produtos` WHERE id_produto = ?";
@@ -115,7 +135,11 @@ public class ProdutoDao {
 		}
 		return produto;
 	}
-
+	/**
+	 * Método responsável listar todos os clientes do banco de dados
+	 * @author lairton
+	 *
+	 */
 	public List<Produto> getLista() {
 		try {
 			List<Produto> produtos = new ArrayList<Produto>();

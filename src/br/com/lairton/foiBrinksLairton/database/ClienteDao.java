@@ -10,7 +10,11 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.lairton.foiBrinksLairton.model.Cliente;
-
+/**
+ * Classe responsável por realizar as operações do banco de dados
+ * @author lairton
+ *
+ */
 public class ClienteDao {
 	private Connection connection;
 
@@ -18,6 +22,11 @@ public class ClienteDao {
 		connection = new ConnectionFactory().getConnection();
 
 	}
+	/**
+	 * Método responsável por adicionar um cliente ao banco de dados
+	 * @author lairton
+	 *
+	 */
 
 	public void addCliente(Cliente cliente) {
 		String bd = "INSERT INTO `clientes`(`nome_completo`, `estadoCivil`, `gênero`, `rua`,"
@@ -48,7 +57,11 @@ public class ClienteDao {
 			throw new RuntimeException(exp);
 		}
 	}
-
+	/**
+	 * Método responsável por alterar as informações do cliente no banco de dados
+	 * @author lairton
+	 *
+	 */
 	public void updateCliente(Cliente cliente) {
 		String bd = "UPDATE `clientes` SET `nome_completo`=?,`estadoCivil`=?,"
 				+ "`gênero`=?,`rua`=?,`bairro`=?,`cep`=?,`estado`=?,`cidade`=?,`cpf`=?,"
@@ -79,7 +92,11 @@ public class ClienteDao {
 			throw new RuntimeException(e);
 		}
 	}
-
+	/**
+	 * Método responsável por apagar um cliente do banco de dados
+	 * @author lairton
+	 *
+	 */
 	public void DeletCliente(Cliente cliente) {
 		String bd = "delete from clientes where id_cliente = ?";
 		try {
@@ -92,7 +109,11 @@ public class ClienteDao {
 			throw new RuntimeException(e);
 		}
 	}
-
+	/**
+	 * Método responsável por realizar a busca de um cliente pela String id no banco de dados
+	 * @author lairton
+	 *
+	 */
 	public Cliente getClienteById(String id) {
 		Cliente cliente = new Cliente();
 		String bd = "Select * from clientes where id_cliente = ?";
@@ -128,7 +149,11 @@ public class ClienteDao {
 		}
 		return cliente;
 	}
-
+	/**
+	 * Método responsável listar todos os clientes do banco de dados
+	 * @author lairton
+	 *
+	 */
 	public List<Cliente> getLista() {
 		try {
 			List<Cliente> clientes = new ArrayList<Cliente>();
