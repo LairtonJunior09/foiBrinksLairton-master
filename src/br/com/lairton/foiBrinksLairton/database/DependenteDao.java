@@ -26,22 +26,22 @@ public class DependenteDao {
 	}
 
 	/**
-	 * Método responsável por adicionar um cliente ao banco de dados
+	 * Método responsável por adicionar um dependente ao banco de dados
 	 * 
 	 * @author lairton
 	 * 
 	 */
 
 	public void addDependente(Dependente dependente) {
-		String bd = "INSERT INTO `dependente_cliente` (`nomeDependente`,`gênero`, "
-				+ " `dataNascimento`) " + "VALUES (?,?,?)";
+		String bd = "INSERT INTO `dependente_cliente` ( `id_cliente`,`nomeDependente`,`gênero`, "
+				+ " `dataNascimento`) " + "VALUES (?,?,?,?)";
 
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
-
-			prepState.setString(1, dependente.getNome_completo());
-			prepState.setString(2, dependente.getGenero());
-			prepState.setDate(3, new Date(dependente.getDataNascimento()
+			prepState.setLong(1, dependente.getId_cliente());
+			prepState.setString(2, dependente.getNome_completo());
+			prepState.setString(3, dependente.getGenero());
+			prepState.setDate(4, new Date(dependente.getDataNascimento()
 					.getTimeInMillis()));
 
 			prepState.execute();
@@ -53,22 +53,20 @@ public class DependenteDao {
 	}
 
 	/**
-	 * Método responsável por alterar as informações do cliente no banco de
+	 * Método responsável por alterar as informações do dependente no banco de
 	 * dados
 	 * 
 	 * @author lairton
 	 * 
 	 */
 	public void updateDependente(Dependente dependente) {
-		String bd = "UPDATE `dependente` SET `nome_completo`=?,"
+		String bd = "UPDATE `dependente_cliente` SET `nomeDependente`=?,"
 				+ "`gênero`=?," + "`dataNascimento`=?,`WHERE `id_dependente`=?";
 
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
 			prepState.setString(1, dependente.getNome_completo());
-
 			prepState.setString(2, dependente.getGenero());
-
 			prepState.setDate(3, new Date(dependente.getDataNascimento()
 					.getTimeInMillis()));
 
@@ -81,13 +79,13 @@ public class DependenteDao {
 	}
 
 	/**
-	 * Método responsável por apagar um cliente do banco de dados
+	 * Método responsável por apagar um dependente do banco de dados
 	 * 
 	 * @author lairton
 	 * 
 	 */
 	public void DeletDependente(Dependente dependente) {
-		String bd = "delete from clientes where id_dependente = ?";
+		String bd = "delete from dependente_cliente where id_dependente = ?";
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
 
@@ -100,15 +98,15 @@ public class DependenteDao {
 	}
 
 	/**
-	 * Método responsável por realizar a busca de um cliente pela String id no
-	 * banco de dados
+	 * Método responsável por realizar a busca de um dependente pela String id
+	 * no banco de dados
 	 * 
 	 * @author lairton
 	 * 
 	 */
 	public Dependente getDependenteById(String id) {
 		Dependente dependente = new Dependente();
-		String bd = "Select * from dependentes where id_dependente = ?";
+		String bd = "Select * from dependente_cliente where id_dependente = ?";
 
 		try {
 			PreparedStatement prepState = connection.prepareStatement(bd);
@@ -133,7 +131,7 @@ public class DependenteDao {
 	}
 
 	/**
-	 * Método responsável listar todos os clientes do banco de dados
+	 * Método responsável listar todos os dependentes do banco de dados
 	 * 
 	 * @author lairton
 	 * 
@@ -142,14 +140,15 @@ public class DependenteDao {
 		try {
 			List<Dependente> dependentes = new ArrayList<Dependente>();
 			PreparedStatement prepState = this.connection
-					.prepareStatement("SELECT * FROM `dependentes` ");
+					.prepareStatement("SELECT * FROM `dependente_cliente` ");
 			ResultSet rs = prepState.executeQuery();
 
 			while (rs.next()) {
 
 				Dependente dependente = new Dependente();
+				dependente.setId_cliente(rs.getLong("id_cliente"));
 				dependente.setId_dependente(rs.getLong("id_dependente"));
-				dependente.setNome_completo(rs.getString("nome_completo"));
+				dependente.setNome_completo(rs.getString("nomeDependente"));
 				dependente.setGenero(rs.getString("gênero"));
 
 				Calendar dataNascimento = Calendar.getInstance();
@@ -157,8 +156,6 @@ public class DependenteDao {
 				dataNascimento.setTime(rs.getDate("dataNascimento"));
 
 				dependente.setDataNascimento(dataNascimento);
-
-				
 
 				dependentes.add(dependente);
 			}

@@ -19,7 +19,7 @@ br.com.lairton.foiBrinksLairton.model.Dependente"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<title>Listar clientes</title>
+<title>Listar dependentes</title>
 <style type="text/css">
 body {
 	background-image: url("BACKGROUND.jpg");
@@ -78,7 +78,7 @@ body {
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
-					<th scope="col">ID Dep.</th>
+					<th scope="col">ID cliente</th>
 					<th scope="col">ID</th>
 					<th scope="col">Nome completo</th>
 					<th scope="col">Gênero</th>
@@ -95,7 +95,7 @@ body {
 			%>
 			<tbody class="item">
 				<tr>
-<%-- 					<td><%=dependente.getId_cliente()%></td> --%>
+					<td><%=dependente.getId_cliente()%></td> --%>
 					<td><%=dependente.getId_dependente()%></td>
 					<td><%=dependente.getNome_completo()%></td>
 					<td><%=dependente.getGenero()%></td>

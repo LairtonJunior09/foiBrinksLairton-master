@@ -105,7 +105,7 @@ body {
 						List<Cliente> clientes = dao.getLista();
 						for (Cliente cliente : clientes ) {
 						%>
-						<option value="<%=cliente.getId_cliente()%>"></option>
+						<option value="<%=cliente.getId_cliente()%>"><%=cliente.getId_cliente()%>-<%=cliente.getNome_completo()%></option>
 						<%} %>
 
 					</select>
