@@ -117,7 +117,7 @@ body {
 				<div class="form-group col-md-4">
 					<label for="inputPassword4">Data de nascimento</label> <input
 						type="text" class="form-control" name="dataNascimento" required
-						value="<%=sdt.format(cliente.getDataCadastro().getTime())%>"
+						value="<%=sdt.format(cliente.getDataNascimento().getTime())%>"
 						placeholder="Ex: 13/12/2011">
 				</div>
 				<div class="container col-md-4">
@@ -143,8 +143,6 @@ body {
 					</select>
 				</div>
 			</div>
-
-
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="inputCity">Rua</label> <input type="text"
@@ -203,8 +201,6 @@ body {
 						value="<%=cliente.getCep()%>">
 				</div>
 			</div>
-
-
 			<div class="form-group">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="gridCheck"
@@ -217,8 +213,6 @@ body {
 					class="fas fa-angle-left"></i></a>
 			</button>
 		</form>
-
-
 		<script type="text/javascript" src="js/script.js"></script>
 
 	</div>

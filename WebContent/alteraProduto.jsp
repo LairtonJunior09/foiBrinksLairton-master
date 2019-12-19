@@ -99,7 +99,7 @@ body {
 						class="form-control" name="id_produto" placeholder="Ex: Id"
 						value="<%=produto.getId_produto()%>"> <br />
 				</div>
-				<div class="form-group col-md-8">
+				<div class="form-group col-md-6">
 					<label for="inputEmail4">Nome do produto</label> <input type="text"
 						required class="form-control" name="nomeProduto"
 						placeholder="Ex: Boneca Annabelle"

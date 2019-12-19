@@ -1,8 +1,13 @@
+<%@ page
+	import="java.util.*,
+	
+br.com.lairton.foiBrinksLairton.database.DependenteDao,
+br.com.lairton.foiBrinksLairton.model.Dependente,
+br.com.lairton.foiBrinksLairton.database.ClienteDao,
+br.com.lairton.foiBrinksLairton.model.Cliente"
+	import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
-<%@page import="br.com.lairton.foiBrinksLairton.model.Cliente"%>
-<%@page import="java.util.List"%>
-<%@page import="br.com.lairton.foiBrinksLairton.database.ClienteDao"%>
-<%@page import="java.text.SimpleDateFormat"%>
+
 <html lang="pt-br">
 <head>
 <!-- Meta tags Obrigatórias -->
@@ -16,7 +21,7 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<title>Adicionar dependente</title>
+<title>FoiBrinks</title>
 <style type="text/css">
 body {
 	background-image: url("BACKGROUND.jpg");
@@ -26,6 +31,12 @@ body {
 </style>
 </head>
 <body>
+	<%
+		SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
+			DependenteDao dao = new DependenteDao();
+			Dependente dependente = dao.getDependenteById(request.getParameter("id_dependente"));
+	%>
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="index.html"> <img
 			src="icon-inicio.png" width="30" height="30"
@@ -81,41 +92,52 @@ body {
 			</ul>
 		</div>
 	</nav>
+
 	<div
 		style="text-align: center; margin: auto; max-width: 600px; background-image: linear-gradient(to bottom, #e9e9e9, #ffffff); box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5);">
-		<form action="adcDependente">
-			<div class="form-row">
-				<div class="form-group col-md-12">
-					<label for="nomeDependente">Nome Completo</label> <input
-						type="text" required class="form-control" name="nomeDependente"
-						placeholder="Ex: Gabriel Peixoto ">
-				</div>
-			</div>
 
+		<form action="listaDependente">
 			<div class="form-row">
-				<div class="form-group col-md-4">
-					<label for="dataNascimento">Data de nascimento</label> <input
-						type="text" class="form-control" name="dataNascimento" required
-						placeholder="Ex: 31/10/2005">
+				<div class="form-group col-md-2">
+					<label for="inputEmail4">ID</label> <input type="text"
+						class="form-control" name="id_dependente" placeholder="Ex: Id"
+						value="<%=dependente.getId_dependente()%>"> <br />
 				</div>
-				<div class="container col-md-4">
-					<label for="genero">Gênero</label> <select name="genero"
-						class="form-control">
-						<option value="">--Selecione--</option>
-						<option value="MASCULINO">Masculino</option>
-						<option value="FEMININO">Feminino</option>
-						<option value="OUTRO">Outro/Não especificado</option>
+				<div class="form-group col-md-8">
+					<label for="inputEmail4">Nome Completo</label> <input type="text"
+						required class="form-control" name="nomeDependente"
+						placeholder="Ex: Boneca Annabelle"
+						value="<%=dependente.getNome_completo()%>">
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputPassword4">Data de nascimento</label> <input
+							type="text" class="form-control" name="dataNascimento" required
+							value="<%=sdt.format(dependente.getDataNascimento().getTime())%>"
+							placeholder="Ex: 13/12/2011">
+					</div>
+				</div>
 
-					</select>
+				<div class="form-row">
+
+					<div class="container col-md-4">
+						<label for="estado">Gênero</label> <select name="genero"
+							class="form-control">
+							<option value="<%=dependente.getGenero()%>"><%=dependente.getGenero()%></option>
+							<option value="MASCULINO">Masculino</option>
+							<option value="FEMININO">Feminino</option>
+							<option value="OUTRO">Outro/Não especificado</option>
+
+						</select>
+					</div>
 				</div>
 				<div class="container col-md-4">
 					<label for="id_responsavel">Id do responsável</label> <select
 						name="id_cliente" class="form-control">
 						<option value="">--Selecione--</option>
 						<%
-							SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
-												ClienteDao dao = new ClienteDao();
-												List<Cliente> clientes = dao.getLista();
+							ClienteDao cdao = new ClienteDao();
+												List<Cliente> clientes = cdao.getLista();
 												for (Cliente cliente : clientes ) {
 						%>
 						<option value="<%=cliente.getId_cliente()%>">
@@ -126,19 +148,20 @@ body {
 
 					</select>
 				</div>
-
 			</div>
 			<div class="form-group">
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" id="gridCheck"
 						required> <label class="form-check-label" for="gridCheck">
-						Declaro que TODOS os dados informados estão corretos </label>
+						Declaro que TODAS as informações do produto estão corretas. </label>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">
-				Cadastrar um novo dependente <img alt="" src="salvar.svg">
-			</button>
+			<button type="submit" class="btn btn-primary">Atualizar
+				cadastro</button>
+		</form>
+
 	</div>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
