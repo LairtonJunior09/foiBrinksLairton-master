@@ -56,6 +56,7 @@ body {
 						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img
 							alt="" src="listar.svg">Listar Produtos
 						</a></li>
+
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -65,7 +66,18 @@ body {
 						<a class="dropdown-item" href="adicionaCliente.jsp"> <img
 							alt="" src="adcClientes.svg">Adicionar Cliente
 						</a> <a class="dropdown-item" href="listaClientes.jsp"> <img
-							alt="" src="clientes.svg">Listar Clientes
+							alt="" src="listar.svg">Listar Clientes
+						</a></li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"><img alt="" src="smile.svg">
+						Dependentes </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="adicionaDependente.jsp"> <img
+							alt="" src="adcClientes.svg">Adicionar Dependente
+						</a> <a class="dropdown-item" href="listaDependentes.jsp"> <img
+							alt="" src="listar.svg">Listar Dependentes
 						</a></li>
 				<li class="nav-item"><a class="nav-link " href="sobreNos.html"
 					tabindex="-1"> <img alt="" src="quemsomos.svg">Sobre nós
@@ -94,9 +106,9 @@ body {
 			</thead>
 			<%
 				SimpleDateFormat sdt = new SimpleDateFormat("dd/MM/yyyy");
-									ProdutoDao dao = new ProdutoDao();
-									List<Produto> produtos = dao.getLista();
-									for (Produto produto : produtos ) {
+										ProdutoDao dao = new ProdutoDao();
+										List<Produto> produtos = dao.getLista();
+										for (Produto produto : produtos ) {
 			%>
 			<tbody class="item">
 				<tr>
@@ -129,7 +141,7 @@ body {
 	<button id="topBtn">
 		<i class="fas fa-arrow-up"></i>
 	</button>
-	
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

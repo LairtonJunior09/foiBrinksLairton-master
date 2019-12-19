@@ -28,7 +28,8 @@ public class AdcDependenteServlet extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 		PrintWriter out = response.getWriter();
-
+		String idemtexto = request.getParameter("id_cliente");
+		System.out.println("Id: "+idemtexto);
 		Long id_cliente = Long.parseLong(request.getParameter("id_cliente"));
 		String nome_completo = request.getParameter("nomeDependente");
 		String genero = request.getParameter("genero");

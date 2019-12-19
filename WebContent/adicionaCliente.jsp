@@ -12,7 +12,7 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<title>FoiBrinks</title>
+<title>Adicionar cliente</title>
 <style type="text/css">
 body {
 	background-image: url("BACKGROUND.jpg");
@@ -23,9 +23,10 @@ body {
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.html"> <img
-			src="icon-inicio.png" width="30" height="30"
-			class="d-inline-block align-top" alt=""> FoiBrinks
+		<a class="navbar-brand" href="index.html"> <img src="icon-inicio.png"
+			width="30" height="30" class="d-inline-block align-top" alt="">
+
+			FoiBrinks 
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -45,10 +46,11 @@ body {
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="adicionaProduto.jsp"> <img
 							alt="" src="adcproduto.svg"> Adicionar Produto
-						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img
-							alt="" src="listar.svg">Listar Produtos
+						</a> <a class="dropdown-item" href="listaProdutos.jsp"> <img alt=""
+							src="listar.svg">Listar Produtos
 						</a></li>
-				<li class="nav-item dropdown"><a
+				
+						<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"><img alt="" src="clientes.svg">
@@ -57,7 +59,17 @@ body {
 						<a class="dropdown-item" href="adicionaCliente.jsp"> <img
 							alt="" src="adcClientes.svg">Adicionar Cliente
 						</a> <a class="dropdown-item" href="listaClientes.jsp"> <img
-							alt="" src="clientes.svg">Listar Clientes
+							alt="" src="listar.svg">Listar Clientes
+						</a></li><li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"><img alt="" src="smile.svg">
+						Dependentes </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="adicionaDependente.jsp"> <img
+							alt="" src="adcClientes.svg">Adicionar Dependente
+						</a> <a class="dropdown-item" href="listaDependentes.jsp"> <img
+							alt="" src="listar.svg">Listar Dependentes
 						</a></li>
 				<li class="nav-item"><a class="nav-link " href="sobreNos.html"
 					tabindex="-1"> <img alt="" src="quemsomos.svg">Sobre nós
